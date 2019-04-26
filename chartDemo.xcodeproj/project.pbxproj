@@ -14,6 +14,7 @@
 		B6D815542271A01700ECD6E4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B6D815532271A01700ECD6E4 /* main.m */; };
 		B6D8155F2271A01700ECD6E4 /* chartDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B6D8155E2271A01700ECD6E4 /* chartDemoTests.m */; };
 		B6D8156A2271A01700ECD6E4 /* chartDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B6D815692271A01700ECD6E4 /* chartDemoUITests.m */; };
+		B6D815872271B6C800ECD6E4 /* Charts.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B6D815862271B6C800ECD6E4 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +34,29 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		B6D815812271B47300ECD6E4 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B6D815822271B68D00ECD6E4 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B6D815872271B6C800ECD6E4 /* Charts.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		B6D815442271A01500ECD6E4 /* chartDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = chartDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6D815472271A01500ECD6E4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -50,6 +74,7 @@
 		B6D815652271A01700ECD6E4 /* chartDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = chartDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6D815692271A01700ECD6E4 /* chartDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = chartDemoUITests.m; sourceTree = "<group>"; };
 		B6D8156B2271A01700ECD6E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B6D815862271B6C800ECD6E4 /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Charts.framework; path = chartDemo/Charts.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +105,7 @@
 		B6D8153B2271A01500ECD6E4 = {
 			isa = PBXGroup;
 			children = (
+				B6D815862271B6C800ECD6E4 /* Charts.framework */,
 				B6D815462271A01500ECD6E4 /* chartDemo */,
 				B6D8155D2271A01700ECD6E4 /* chartDemoTests */,
 				B6D815682271A01700ECD6E4 /* chartDemoUITests */,
@@ -141,6 +167,8 @@
 				B6D815402271A01500ECD6E4 /* Sources */,
 				B6D815412271A01500ECD6E4 /* Frameworks */,
 				B6D815422271A01500ECD6E4 /* Resources */,
+				B6D815812271B47300ECD6E4 /* Embed Frameworks */,
+				B6D815822271B68D00ECD6E4 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -427,10 +455,15 @@
 				CODE_SIGN_ENTITLEMENTS = chartDemo/chartDemo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/chartDemo",
+				);
 				INFOPLIST_FILE = chartDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
+					"${DT_TOOLCHAIN_DIR}/usr/lib/swift/macosx/",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = liang.zheng.chartDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -444,10 +477,15 @@
 				CODE_SIGN_ENTITLEMENTS = chartDemo/chartDemo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/chartDemo",
+				);
 				INFOPLIST_FILE = chartDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
+					"${DT_TOOLCHAIN_DIR}/usr/lib/swift/macosx/",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = liang.zheng.chartDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";

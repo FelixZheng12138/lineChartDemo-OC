@@ -7,9 +7,13 @@
 //
 
 #import <Cocoa/Cocoa.h>
-
+#import <Charts/Charts-Swift.h>
 @interface ViewController : NSViewController
-
-
+<ChartViewDelegate>{
+    
+}
+@property (nonatomic, strong)CombinedChartView      *combinedChartView;
+@property (nonatomic, strong)BarChartView           *barChartView;
+@property (nonatomic, strong)LineChartView          *depthChartView;
 @end
 
